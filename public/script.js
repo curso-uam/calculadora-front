@@ -15,7 +15,7 @@ function realizarOperacion() {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ op1, op2}),
+        body: JSON.stringify({ a: Number(op1), b: Number(op2) }),
     }).then(response => {
     if (!response.ok) {
         return response.text().then(text => {
