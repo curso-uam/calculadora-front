@@ -16,9 +16,14 @@ function realizarOperacion() {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ op1, op2}),
-    })
-    .then(response => response.json())
-    .then(data => {
+    }).then(response => {
+    if (!response.ok) {
+        return response.text().then(text => {
+            throw new Error(`HTTP ${response.status}: ${text}`);
+        });
+    }
+    return response.json();
+}).then(data => {
         alert('Operacion realizada con exito');
     })
     .catch((error) => {
