@@ -2,7 +2,7 @@
 const API_BASE = 'http://54.92.158.218:8000';
 // Función para agregar un producto
 function realizarOperacion() {
-    const op1 = document.getElementById('operando1).value;
+    const op1 = document.getElementById('operando1').value;
     const op2 = document.getElementById('operando2').value;
 
     if (!op1 || !op2) {
